@@ -8,10 +8,10 @@
 
 ## Use
 
-#### Option 1 : Framer Modules<br>
+<!-- #### Option 1 : Framer Modules<br>
 <a href='https://open.framermodules.com/Pair'><img alt='Install with Framer Modules' src='https://www.framermodules.com/assets/badge@2x.png' width='160' height='40' /></a>
-
-#### Option 2: Manual Install<br>
+ -->
+#### Manual Install<br>
 Download the Twistable.coffee file and place it in the modules folder of your project.<br>
 In your framer project, write:
 
@@ -37,8 +37,8 @@ enableTwistable( range )
 enableTwistable( range, constrain )
 ````
 
-Where `range` is an array with a minimum and maximum value. If a `range` is provided the layer's twisting will be constrained to the range
-`constrain` is a Boolean. If false, the layer will not be constrained to `range`.
+Where `range` is an array with a minimum and maximum value. If a `range` is provided the layer's twisting will be constrained to the range.
+`constrain` is a Boolean. If `false`, the layer will not be constrained to `range`.
 
 Once `enableTwistable` is called, the layer will become twistable, and will emit the following events: 
 
@@ -50,14 +50,14 @@ Once `enableTwistable` is called, the layer will become twistable, and will emit
 
 
 ---
-##### event handling
+## Event handling shortcuts
 
 For responding to twisting, recommend using:
 
 ````coffeeScript
-twistableLayer.onChange "rotation", ->
+twistLayer.onChange "rotation", ->
 ````
-
+<br><br>
 For specialized listening:
 
 ````coffeeScript
@@ -92,7 +92,7 @@ When the layer stops moving when before it was spinning due to velocity from a p
 
 
 ---
-##### properties
+## Properties
 
 ````coffeescript
 twistValue
@@ -101,7 +101,7 @@ A number between 0-1. The rotation of the layer with respect to its twist range.
 
 
 ---
-##### methods
+## Methods
 
 ````coffeescript
 setTwistValue( n )

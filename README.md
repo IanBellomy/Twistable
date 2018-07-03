@@ -102,7 +102,7 @@ When the layer stops moving when before it was spinning due to velocity from a p
 ````coffeescript
 twistValue
 ````
-A number between 0-1. The rotation of the layer with respect to its twist range. Like `value` of a `SliderComponent`
+A number between 0-1. The rotation of the layer with respect to its twist range. Like `value` of a `SliderComponent`. Setting this value has no effect. Use `setTwistValue()`.
 
 
 

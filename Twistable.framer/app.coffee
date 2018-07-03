@@ -117,8 +117,8 @@ shortestDistanceBetweenAngles = (a1,a2)->
 		return r1
 
 layerA = new Layer
-	y: 132	
-	x: 333
+	y: 153	
+	x: 289
 	originY: 2.01
 
 layerB = new Layer
@@ -126,8 +126,13 @@ layerB = new Layer
 	height: 20
 	
 textLayer = new TextLayer
+	width: 388
+	height: 80
+	y: 487
+	x: 197
 textLayer.center()
 textLayer.text = "0°"
+textLayer.textAlign = "center"
 
 layerA.enableTwistable([-360,360])
 

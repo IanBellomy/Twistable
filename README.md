@@ -9,7 +9,7 @@
 ## Use
 
 <!-- #### Option 1 : Framer Modules<br>
-<a href='https://open.framermodules.com/Pair'><img alt='Install with Framer Modules' src='https://www.framermodules.com/assets/badge@2x.png' width='160' height='40' /></a>
+<a href='https://open.framermodules.com/Twistable'><img alt='Install with Framer Modules' src='https://www.framermodules.com/assets/badge@2x.png' width='160' height='40' /></a>
  -->
 #### Manual Install<br>
 Download the Twistable.coffee file and place it in the modules folder of your project.<br>
@@ -28,7 +28,7 @@ twistLayer.enableTwistable()
 
 NOTE: This module modifies Layer.prototype and so is not gauranteed to play well with all modules in existance or even your own code. Buyer beware. 
 
-## New Layer Method
+## New Layer methods
 In order of importance. 
 
 
@@ -49,6 +49,11 @@ Once `enableTwistable` is called, the layer will become twistable, and will emit
 - `"spin"`
 - `"spinEnd"`
 
+<br><br>
+````coffeescript
+setTwistValue( n )
+````
+Where `n` is a value between 0-1. The rotation of the layer will be set with respect to its twist range. Like `value =` of a `SliderComponent`
 
 ---
 ## Event handling shortcuts
@@ -101,13 +106,6 @@ twistValue
 A number between 0-1. The rotation of the layer with respect to its twist range. Like `value` of a `SliderComponent`
 
 
----
-## Methods
-
-````coffeescript
-setTwistValue( n )
-````
-Where `n` is a value between 0-1. The rotation of the layer will be set with respect to its twist range. Like `value =` of a `SliderComponent`
 
 
 ## Contact

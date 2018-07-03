@@ -32,9 +32,9 @@ NOTE: This module modifies Layer.prototype and so is not gauranteed to play well
 
 
 ````coffeescript
-twistLayer.enableTwistable()
-twistLayer.enableTwistable( range )
-twistLayer.enableTwistable( range, constrain )
+enableTwistable()
+enableTwistable( range )
+enableTwistable( range, constrain )
 ````
 
 Where `range` is an array with a minimum and maximum value. If a `range` is provided the layer's twisting will be constrained to the range.
@@ -50,7 +50,7 @@ Once `enableTwistable` is called, the layer will become twistable, and will emit
 
 <br><br>
 ````coffeescript
-twistLayer.setTwistValue( n )
+setTwistValue( n )
 ````
 Where `n` is a value between 0-1. The rotation of the layer will be set with respect to its twist range. Like `value =` of a `SliderComponent`. `enableTwistable` must be called before `setTwistValue`.
 
@@ -60,37 +60,37 @@ Where `n` is a value between 0-1. The rotation of the layer will be set with res
 For responding to twisting, recommend using:
 
 ````coffeeScript
-twistLayer.onChange "rotation", ->
+onChange "rotation", ->
 ````
 <br><br>
 For specialized listening:
 
 ````coffeeScript
-twistLayer.onTwistStart( ()->  )
+onTwistStart( ()->  )
 ````
 When the mouse first moves after pressing down on the twistable layer.<br>
 
 
 ````coffeeScript
-twistLayer.onTwist( ()->  )
+onTwist( ()->  )
 ````
 When the mouse moves anwhere while twisting.
 
 
 ````coffeeScript
-twistLayer.onTwistEnd( ()->  )
+onTwistEnd( ()->  )
 ````
 When the mouse is released after twisting.
 
 
 ````coffeeScript
-twistLayer.onSpin( ()->  )
+onSpin( ()->  )
 ````
 When the layer moves due to velocity after the twist has ended.
 
 
 ````coffeeScript
-twistLayer.onSpinEnd( ()->  )
+onSpinEnd( ()->  )
 ````
 When the layer stops moving when before it was spinning due to velocity from a previous twist.
 
@@ -100,7 +100,7 @@ When the layer stops moving when before it was spinning due to velocity from a p
 ## Properties
 
 ````coffeescript
-twistLayer.twistValue
+twistValue
 ````
 A number between 0-1. The rotation of the layer with respect to its twist range. Like `value` of a `SliderComponent`
 

@@ -26,8 +26,9 @@ twistLayer = new Layer
 twistLayer.enableTwistable()
 ````
 
+NOTE: This module modifies Layer.prototype and so is not gauranteed to play well with all modules in existance or even your own code. Buyer beware. 
 
-## New Layer Methods
+## New Layer Method
 In order of importance. 
 
 

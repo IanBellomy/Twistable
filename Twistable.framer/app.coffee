@@ -8,7 +8,7 @@ Layer.prototype.enableTwistable = (range,constrained)->
 	@angularVel = 0	# Used for flicked spin
 	@twistRange = range || [0,360]  # Used for twistValue
 	@twistValue = 0		# The rotation as percent of the twistRange
-	@twistConstrained = constrained || true	 # Whether or not to clamp twisting.
+	@twistConstrained = constrained || range != undefined	 # Whether or not to clamp twisting.
 	@spinDecay = 0.95
 	
 	handleMouseMove = (e)=>			
@@ -134,7 +134,8 @@ textLayer.center()
 textLayer.text = "0°"
 textLayer.textAlign = "center"
 
-layerA.enableTwistable([-360,360])
+# range, constrained
+layerA.enableTwistable()
 
 # Twist events happen when layer is grabbed and being twisted
 layerA.onTwist ->	

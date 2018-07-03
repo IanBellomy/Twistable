@@ -1,11 +1,3 @@
-### 
-	TODO: 
-		allow twisting while cursor outside of layer
-		emit event when enableTwistable
-		emit spin events		
-		constrain rotation option
-	
-###
 
 # Twistable
 

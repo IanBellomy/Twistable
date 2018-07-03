@@ -135,7 +135,7 @@ textLayer.text = "0°"
 textLayer.textAlign = "center"
 
 # range, constrained
-layerA.enableTwistable()
+layerA.enableTwistable([-360,360])
 
 # Twist events happen when layer is grabbed and being twisted
 layerA.onTwist ->	

@@ -1,0 +1,9 @@
+{
+    "name": "Twistable",
+    "description": "Make a layer behave like a spinner or dial.",
+    "author": "Ian Bellomy",
+    
+    "require": "require 'Twistable'",
+    "install": "Twistable.coffee",
+    "example": "example.coffee"
+}

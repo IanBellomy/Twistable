@@ -16,7 +16,7 @@ Layer.prototype.enableTwistable = (range,constrained)->
 	@twistConstrained = constrained || range != undefined	 # Whether or not to clamp twisting.
 	@spinDecay = 0.95
 	
-	handleMouseMove = (e)=>			
+	handleTouchMove = (e)=>			
 		newAngle = Math.atan2(@canvasPinLocation.y-e.pageY,@canvasPinLocation.x-e.pageX)
 		newAngleDeg = (newAngle / Math.PI * 180)
 		newAngleDegUpIsZero = newAngleDeg - 90
@@ -52,14 +52,14 @@ Layer.prototype.enableTwistable = (range,constrained)->
 			@emit "spinEnd"
 			Framer.Loop.off "update",handleSpinning
 			
-	handleMouseUp = =>		
+	handleTouchEnd = =>		
 		@isBeingTwisted = false		
 		@emit "twistEnd"
-		Events.wrap(document).removeEventListener "mousemove",handleMouseMove
-		Events.wrap(document).removeEventListener "mouseup",handleMouseUp
+		Events.wrap(document).removeEventListener "touchmove",handleTouchMove
+		Events.wrap(document).removeEventListener "touchend",handleTouchEnd
 		Framer.Loop.on "update",handleSpinning
 		
-	@onMouseDown (e)=>
+	@onTouchStart (e)=>
 		localPinLocation = 
 			x:@width * @originX
 			y:@height * @originY
@@ -73,8 +73,8 @@ Layer.prototype.enableTwistable = (range,constrained)->
 		@rotationTouchPoint = {x:e.pageX,y:e.pageY}
 		@hasTwistBegan = false
 		@isBeingTwisted = true
-		Events.wrap(document).addEventListener "mousemove",handleMouseMove
-		Events.wrap(document).addEventListener "mouseup",handleMouseUp
+		Events.wrap(document).addEventListener "touchmove",handleTouchMove
+		Events.wrap(document).addEventListener "touchend",handleTouchEnd
 		Framer.Loop.off "update",handleSpinning
 		
 	@setTwistValue = (v)=>
